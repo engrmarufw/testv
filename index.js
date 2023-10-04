@@ -45,9 +45,10 @@ async function run() {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
 
-        const serviceCollection = client.db('carDoctor').collection('services');
-        const bookingCollection = client.db('carDoctor').collection('bookings');
         const usersCollection = client.db("mmanageDB").collection("users");
+        const teacherCollection = client.db("mmanageDB").collection("teachers");
+        const studentCollection = client.db("mmanageDB").collection("students");
+        const subjectCollection = client.db("mmanageDB").collection("subjects");
 
         app.get('/allusers', async (req, res) => {
             const result = await usersCollection.find().toArray();
